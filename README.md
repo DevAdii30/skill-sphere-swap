@@ -1,73 +1,28 @@
-# Welcome to your Lovable project
+# Skill Swap Platform
 
-## Project info
+## Problem Statement 1: Skill Swap Platform
 
-**URL**: https://lovable.dev/projects/a1813af5-0229-41b9-ab04-bd9e087c75fe
+### Overview:
+Develop a Skill Swap Platform — a mini application that enables users to list their skills and request others in return.
 
-## How can I edit this code?
+### Features:
 
-There are several ways of editing your application.
+- Basic info: Name, location (optional), profile photo (optional)
+- List of skills offered
+- List of skills wanted
+- Availability (e.g., weekends, evenings)
+- User can make their profile public or private.
+- Users can browse or search others by skill (e.g., “Photoshop” or “Excel”)
 
-**Use Lovable**
+### Request & Accept Swaps:
+- Accept or reject swap offers
+- Show current and pending swap requests
+- Ratings or feedback after a swap
+- The user is also able to delete the swap request if it is not accepted.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a1813af5-0229-41b9-ab04-bd9e087c75fe) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/a1813af5-0229-41b9-ab04-bd9e087c75fe) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Admin Role:
+- Reject inappropriate or spammy skill descriptions.
+- Ban users who violate platform policies.
+- Monitor pending, accepted, or cancelled swaps.
+- Send platform-wide messages (e.g., feature updates, downtime alerts).
+- Download reports of user activity, feedback logs, and swap stats.
