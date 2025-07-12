@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SkillCard } from './SkillCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
+import { useAuth } from '@/contexts/AuthContext';
 import { Filter, Search, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -58,6 +60,8 @@ const mockUsers = [
 const popularSkills = ['React', 'Python', 'Photography', 'Spanish', 'UI/UX Design', 'Data Science', 'Marketing'];
 
 export function SkillGrid() {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const [users] = useState(mockUsers);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSkill, setSelectedSkill] = useState<string>('');
@@ -81,11 +85,15 @@ export function SkillGrid() {
   });
 
   const handleRequestSwap = (userId: string) => {
-    const user = users.find(u => u.id === userId);
-    toast({
-      title: "Swap Request Sent!",
-      description: `Your request has been sent to ${user?.name}. They'll be notified shortly.`,
-    });
+    if (!isAuthenticated) {
+      toast({
+        title: "Authentication required",
+        description: "Please log in to send swap requests.",
+        variant: "destructive",
+      });
+      navigate('/login');
+      return;
+    }
   };
 
   const handleSkillClick = (skill: string) => {
